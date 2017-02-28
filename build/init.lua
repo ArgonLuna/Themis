@@ -11,7 +11,7 @@ local standardConfig = {
 }
 local config = dcopy(standardConfig)
 if fs.exists(".themis") then
-  local handle = fs.open(".themis", "w")
+  local handle = fs.open(".themis", "r")
   local content = handle.readAll()
   handle.close()
   config = loadstring("return " .. content)()
@@ -27,7 +27,7 @@ addRoutine = function(f)
   return #routines
 end
 for k, v in pairs(fs.list(config.scriptLocation)) do
-  local handle = fs.open((fs.combine(config.scriptLocation, v)), "w")
+  local handle = fs.open((fs.combine(config.scriptLocation, v)), "r")
   local content = handle.readAll()
   handle.close()
   addRoutine(loadstring(content))

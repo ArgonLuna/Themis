@@ -10,7 +10,7 @@ standardConfig =
 config = dcopy standardConfig
 
 if fs.exists ".themis"
-  handle = fs.open ".themis", "w"
+  handle = fs.open ".themis", "r"
   content = handle.readAll!
   handle.close!
   config = loadstring("return " .. content)()
@@ -25,7 +25,7 @@ addRoutine = (f) ->
   #routines
 
 for k,v in pairs fs.list config.scriptLocation
-  handle = fs.open (fs.combine config.scriptLocation, v), "w"
+  handle = fs.open (fs.combine config.scriptLocation, v), "r"
   content = handle.readAll!
   handle.close!
   addRoutine loadstring(content)
