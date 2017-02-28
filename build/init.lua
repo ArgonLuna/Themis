@@ -39,7 +39,8 @@ while true do
   for k, v in pairs(routines) do
     if v.filter == evt[1] or v.filter == nil or evt[1] == "terminate" then
       if coroutine.status(v.routine) ~= "dead" then
-        v.filter = coroutine.resume(v.routine)
+        local ok
+        ok, v.filter = coroutine.resume(v.routine, unpack(evt))
       end
     end
   end

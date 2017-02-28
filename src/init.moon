@@ -35,4 +35,4 @@ while true
   for k,v in pairs routines
     if v.filter == evt[1] or v.filter == nil or evt[1] == "terminate"
       if coroutine.status(v.routine) != "dead"
-        v.filter = coroutine.resume(v.routine)
+        ok, v.filter = coroutine.resume(v.routine, unpack evt)
