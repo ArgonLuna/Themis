@@ -1,0 +1,21 @@
+{
+  "name": "argon-luna-themis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-haml": "^0.1.6",
+    "gulp-moonscript": "^1.0.0",
+    "gulp-run-command": "^0.0.7",
+    "gulp-watch": "^4.3.11",
+    "temp": "^0.8.3"
+  }
+}
